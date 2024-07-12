@@ -1,7 +1,7 @@
 .navbar{
     display: flex;
     justify-content: space-around;
-    padding: 8px;
+    padding: 16px;
     box-shadow: 0 1px 3px -2px black;
 }
 .nav-logo{
@@ -11,7 +11,7 @@
 }
 .nav-logo p{
   color:black;
-  font-size: 30px;
+  font-size: 38px;
   font-weight: 600;
 }
 .nav-menu{
@@ -20,7 +20,7 @@
     list-style: none;
     gap:50px;
     color:gray;
-    font-size: 15px;
+    font-size: 20px;
     font-weight: 500;
 }
 .nav-menu li{
@@ -41,11 +41,11 @@
 .nav-login-cart{
     display: flex;
     align-items: center;
-    gap:40px;
+    gap:45px;
 }
 .nav-login-cart button{
-    width: 140px;
-    height: 48px;
+    width: 157px;
+    height: 58px;
     outline: none;
     border:1px solid #7a7a7a;
     border-radius: 75px;
@@ -59,8 +59,8 @@
     background: #f3f3f3;
 }
 .nav-cart-count{
-    width: 20px;
-    height: 20px;
+    width: 22px;
+    height: 22px;
     display: flex;
     justify-content: center;
     align-items: center;
