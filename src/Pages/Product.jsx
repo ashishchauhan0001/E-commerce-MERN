@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useContext } from 'react'
+import { ShopContext } from '../Context/ShopContext';
+import { useParams } from 'react-router-dom';
+import Breadcrum from '../Components/Breadcrum/Breadcrum';
+import ProductDisplay from '../Components/ProductDisplay/ProductDisplay';
 
 export const Product = () => {
+  const {all_product}=useContext(ShopContext);
+  const {productId}=useParams(); // allows you to access the parameters of the current route in a URL, which can be useful for managing dynamic routes and displaying content based on those parameters
+  const product=all_product.find((e)=> e.id===Number(productId));
   return (
-    <div>Product</div>
+    <div>
+      <Breadcrum product={product}/>
+      <ProductDisplay product={product}/>
+    </div>
   )
 }
