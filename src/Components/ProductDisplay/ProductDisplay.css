@@ -1,48 +1,49 @@
 .productdisplay{
     display: flex;
-    margin: 0px 170px;
+    margin: 0px 40px;
 }
 .productdisplay-left{
     display: flex;
-    gap: 17px;
+    gap: 12px;
 }
 .productdisplay-img-list{
     display: flex;
     flex-direction: column;
-    gap:16px
+    gap:12px
 }
 .productdisplay-img-list img{
- height: 163px;
+ height: 123px;
+
 }
-.productdisplay-main-img{
-    width: 586px;
-    height: 700px;
+.productdisplay-main {
+    width: 416px;
+    height: 530px;
 }
 .productdisplay-right{
-    margin: 0px 70px;
+    margin: 0px 40px;
     display: flex;
     flex-direction: column;
 }
 .productdisplay-right h1{
     color: #3d3d3d;
-    font-size: 40px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 600;
 }
-.productdisplay-right-stars{
+.productdisplay-right-star{
     display:flex;
     align-items: center;
     margin-top: 13px;
-    gap: 5px;
+    gap: 3px;
     color: #1c1c1c;
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .productdisplay-right-prices{
     display: flex;
-    margin: 40px 0px;
-    gap:30px;
-    font-size: 24px;
-    font-weight: 700;
+    margin: 20px 0px;
+    gap:20px;
+    font-size: 20px;
+    font-weight: 600;
 }
 .productdisplay-right-price-old{
     color: #818181;
@@ -52,21 +53,21 @@
     color: #ff4141;
 }
 .productdisplay-right-size h1{
- margin-top: 55px;   
+ margin-top: 40px;   
  color: #656565;
- font-size: 20px;
+ font-size: 16px;
  font-weight: 600;
 }
 .productdisplay-right-sizes{
     display: flex;
-    margin: 30px 0px; 
+    margin: 10px 0px; 
     gap: 20px;
 
 }
 .productdisplay-right-sizes div{
     padding: 18px 24px;
-    background: #fbfbfb;
-    border:1px solid #ebebeb;
+    background: #ebe8e8;
+    border:1px solid #6e6262;
     border-radius: 3px;
     cursor: pointer;
 }
@@ -77,10 +78,13 @@
     font-weight: 600;
     color:white;
     background: #ff4141;
-    margin-bottom: 40px;
+    margin: 40px 0px 40px 0px;
     border:none;
     outline:none;
     cursor: pointer;
+}
+button:hover{
+    transform: scale(1.05);
 }
 .productdisplay-right-category{
     margin-top:10px;
