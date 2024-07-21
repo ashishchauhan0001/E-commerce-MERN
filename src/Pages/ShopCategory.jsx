@@ -27,7 +27,7 @@ export const ShopCategory = (props) => {
           }
         })}
       </div>
-      <div className="shopcategory-loadmore">
+      <div style={{cursor:"pointer"}} onClick={()=>alert("We are working on it!!")} className="shopcategory-loadmore">
         Explore More
       </div>
     </div>
