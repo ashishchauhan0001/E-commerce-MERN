@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from "react";
-
+import toast, { Toaster } from 'react-hot-toast';
 
 export const ShopContext= createContext(null);
 
@@ -41,12 +41,19 @@ useEffect(()=>{
     const [cartItems,setCartItems]=useState(getDefaultCart()) 
     //  console.log(cartItems);
     const addToCart = (itemId) => {
-        setCartItems((prev) => ({
-            ...prev,
-            [itemId]: (prev[itemId] || 0) + 1 // Ensure that the initial value is handled
-        }))
+       
+        
+        const token = localStorage.getItem('auth-token');
+        
+            if (!token) {
+                toast.error('Please log in to add items to the cart.');
+                return;
+            }
 
-        if(localStorage.getItem('auth-token')){
+            setCartItems((prev) => ({
+                ...prev,
+                [itemId]: (prev[itemId] || 0) + 1 // Ensure that the initial value is handled
+            }))
             fetch('http://localhost:4000/addtocart',{
                 method:'POST',
                 headers:{
@@ -58,7 +65,8 @@ useEffect(()=>{
             })
             .then((res)=>res.json())
             .then((data)=>console.log(data));
-        }
+            toast.success("Item Added Sucessfully")
+        
     };
     const removeFromCart=(itemId)=>{
         setCartItems((prev)=>({...prev,[itemId]:prev[itemId]-1}));
@@ -75,6 +83,7 @@ useEffect(()=>{
             .then((res)=>res.json())
             .then((data)=>console.log(data));
         }
+        toast.success("Item Removed Sucessfully");
     }
 
     const getTotalCartAmount=()=>{

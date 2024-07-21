@@ -3,6 +3,7 @@ import './CSS/ShopCategory.css'
 import { ShopContext } from '../Context/ShopContext'
 import dropdown_icon from '../Components/Assets/dropdown_icon.png'
 import Item from '../Components/Item/Item'
+import toast from 'react-hot-toast'
 
 export const ShopCategory = (props) => {
   const {all_product} = useContext(ShopContext);
@@ -27,7 +28,9 @@ export const ShopCategory = (props) => {
           }
         })}
       </div>
-      <div style={{cursor:"pointer"}} onClick={()=>alert("We are working on it!!")} className="shopcategory-loadmore">
+      <div style={{cursor:"pointer"}} onClick={()=>toast('We are working on it!', {
+  icon: '✌️',
+})}className="shopcategory-loadmore">
         Explore More
       </div>
     </div>

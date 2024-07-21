@@ -1,5 +1,6 @@
 import React,{useState} from 'react'
 import './CSS/LoginSignup.css'
+import toast, { Toaster } from 'react-hot-toast';
 
 export const LoginSignup = () => {
 
@@ -31,6 +32,7 @@ export const LoginSignup = () => {
   
       if (responseData.success) {
         localStorage.setItem('auth-token', responseData.token);
+        toast.success("Login Successfully")
         window.location.replace("/");
       } else {
         alert("Login failed: " + responseData.errors);
@@ -52,10 +54,11 @@ export const LoginSignup = () => {
 
     if(responseData.success){
       localStorage.setItem('auth-token',responseData.token);
+         toast.success("Signup Successfully");
       window.location.replace("/");
     }
     else{
-      alert("User Already Exists with same email address/username")
+      toast.error("User Already Exists with same email address/username")
     }
   }
 
